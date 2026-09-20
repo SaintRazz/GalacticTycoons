@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Galactic Tycoons Market Lookup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css', v='2') }}">
+    <script src="{{ url_for('static', filename='script.js', v='2') }}" defer></script>
+</head>
+<body>
+    <main class="container">
+        <section class="panel" aria-labelledby="page-title">
+            <p class="eyebrow">Galactic Tycoons</p>
+            <h1 id="page-title">Market price lookup</h1>
+            <p class="intro">Check the live exchange price for a material or product.</p>
+
+            <form id="price-form">
+                <label for="commodity">Commodity or Product</label>
+                <input id="commodity" name="commodity" type="text" placeholder="Iron" autocomplete="off" required>
+
+                <label for="quantity">Quantity Desired</label>
+                <input id="quantity" name="quantity" type="number" min="1" step="1" value="1" required>
+
+                <label for="api-key">API Key</label>
+                <input id="api-key" name="api-key" type="password" placeholder="Your company API key" autocomplete="off" required>
+
+                <button type="submit" id="submit-button">Get Price</button>
+            </form>
+
+            <p class="disclosure">Your API key is sent only to this local app for this request. It is not saved or shared.</p>
+            <div id="output" class="output" aria-live="polite" hidden></div>
+        </section>
+    </main>
+</body>
+</html>
